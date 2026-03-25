@@ -5,6 +5,7 @@ import java.util.*;
 /**
  * Represents a cat with id image and score
  */
+
 public class Cat {
     private final String id;
     private final String imageUrl;

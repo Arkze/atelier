@@ -1,19 +1,26 @@
 package com.example.springboot.infrastructure.db.entities;
 
 import jakarta.persistence.*;
-
 import java.math.BigDecimal;
-
+import lombok.AllArgsConstructor;
 /**
  * JPA entity representing a cat.
  * A cat can get his score changed 
  */
 @Entity
+@AllArgsConstructor
 public class CatEntity {
+
     @Id
     private String id;
+
     private String imageUrl;
+
     private Integer score;
+
+    @Version
+    @Column(columnDefinition = "bigint DEFAULT 0", nullable = false)
+    private Long version;
 
     public CatEntity() {}
 

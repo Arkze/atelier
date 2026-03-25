@@ -41,7 +41,14 @@ public class CatRepositoryAdapter implements CatRepository {
      */
     @Override
     public CatEntity save(Cat cat) {
-        return catJpaRepository.save(CatMapper.toEntity(cat));
+        CatEntity entity = catJpaRepository.findById(cat.getId())
+            .orElseGet(() -> CatMapper.toEntity(cat));
+
+        entity.setId(cat.getId());
+        entity.setImage(cat.getImage());
+        entity.setScore(cat.getScore());
+
+        return catJpaRepository.save(entity);
     }
 
     @Override
