@@ -15,7 +15,7 @@ public class CatEntity {
     private String imageUrl;
     private Integer score;
 
-    public CatEntity() {} // JPA requires no-arg constructor
+    public CatEntity() {}
 
     public CatEntity(String id, String imageUrl, Integer score) {
         this.id = id;

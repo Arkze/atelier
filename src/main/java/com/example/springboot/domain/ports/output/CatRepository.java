@@ -29,4 +29,7 @@ public interface CatRepository {
 
     List<Cat> saveAll(List<Cat> cats);
 
+    List<Cat> findAllByOrderByScoreDesc();
+
+
 }

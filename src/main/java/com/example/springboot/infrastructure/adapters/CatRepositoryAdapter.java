@@ -56,4 +56,12 @@ public class CatRepositoryAdapter implements CatRepository {
                 .map(CatMapper::toDomain)
                 .toList();
     }
+
+    @Override
+    public List<Cat> findAllByOrderByScoreDesc() {
+        return catJpaRepository.findAllByOrderByScoreDesc()
+                .stream()
+                .map(CatMapper::toDomain)
+                .toList();
+    }
 }
