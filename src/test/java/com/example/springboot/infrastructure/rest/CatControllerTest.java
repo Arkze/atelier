@@ -7,7 +7,9 @@ import org.springframework.http.ResponseEntity;
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 import org.springframework.boot.test.context.SpringBootTest;
-@SpringBootTest
+import java.util.List;
+import org.springframework.http.HttpStatus;
+
 class CatControllerTest {
 
     private final GetCatScoreUseCase getCatScore = mock(GetCatScoreUseCase.class);
@@ -24,7 +26,7 @@ class CatControllerTest {
 
         ResponseEntity<Integer> response = controller.getScore("1");
 
-        assertEquals(200, response.getStatusCodeValue());
+        assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(10, response.getBody());
     }
 }

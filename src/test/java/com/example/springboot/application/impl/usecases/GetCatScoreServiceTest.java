@@ -5,13 +5,13 @@ import com.example.springboot.domain.models.Cat;
 import com.example.springboot.domain.ports.output.CatRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import java.util.List;
 
 import java.util.Optional;
 import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-@SpringBootTest
 class GetCatScoreServiceTest {
 
     private final CatRepository catRepository = mock(CatRepository.class);

@@ -2,16 +2,17 @@ package com.example.springboot.application.impl.usecases;
 
 import com.example.springboot.domain.exceptions.CatNotFoundException;
 import com.example.springboot.domain.models.Cat;
+import com.example.springboot.domain.models.enums.LikeType;
 import com.example.springboot.domain.ports.output.CatRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import java.util.Optional;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-@SpringBootTest
 class CatLikeScoreServiceTest {
 
     private final CatRepository catRepository = mock(CatRepository.class);
